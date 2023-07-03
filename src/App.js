@@ -63,17 +63,45 @@ export class ClassCar extends React.Component {
     )
   }
 }
+
 // Function Component
-function PassedFun(props) {
-  return (<p>this is passed component with a prop named : { props.prop }</p>)
-}
+let cars = ["toyota", "kia", "ibiza"]
 export function FunCar(props) {
-  let propName = "Vanoss"
+  let clicked = (a, b) => {
+    alert("The event type is :\n" + b.type)
+  }
+  let Goal = (props) => {
+    if(props.goal) {
+      return "the goal is complete";
+    }else {
+      return "didn't finish the goal";
+    }
+  }
   return (
     <div>
-      <h2>Function component</h2>
-      <p>Using props (with ternary operator): { props.name.length > 3? "Valid user name": "invalid user name" }</p>
-      <PassedFun prop={ propName } />
+      <h2 onClick={(event) => clicked("test", event)}>Function component</h2>
+      <h3>Usage of if/else statement</h3>
+      <Goal goal={ false } />
     </div>
+  )
+}
+export function MapFun(props) {
+  let cars = ["Toyota", "Ibiza", "Kia"];
+  let Maping = (props) => <li>{props.brand}</li>
+  let Maping2 = (props) => <li>the owner is : {props.owner}</li>
+  return (
+    <>
+      <h2>array <i>map</i></h2>
+      <ol>
+        { cars.map((elem) =>{
+          return (
+            <>
+              <Maping brand={elem} />
+              <Maping2 owner="Goku" />
+           </>
+          )
+        }) }
+      </ol>
+    </>
   )
 }
