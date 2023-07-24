@@ -1,0 +1,21 @@
+#router{
+  margin: 40px 0 20px;
+  background: #00000049;
+}
+#secoundLinkContainer{
+  margin: 20px 0 10px;
+  background: #01b39569;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+#secoundLinkContainer a{
+  text-decoration: none;
+  color: #eee;
+  padding: 5px 10px;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#secoundLinkContainer a:active{
+  background-color: rgba(0, 0, 0, 0.3);
+}
